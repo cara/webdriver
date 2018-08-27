@@ -6,3 +6,7 @@ cryptography
 typing
 numpy
 python-magic
+qrtools
+zbar
+pypng
+pillow

@@ -1,8 +1,11 @@
 import os, sys, time, json
+import qrtools
+
 from webwhatsapi import WhatsAPIDriver
 from webwhatsapi.objects.message import Message, MediaMessage
 
-print "Environment", os.environ
+
+print "Environment Mac", os.environ
 try:
    os.environ["SELENIUM"]
 except KeyError:
@@ -11,6 +14,12 @@ except KeyError:
 
 driver = WhatsAPIDriver(client='remote', command_executor=os.environ["SELENIUM"])
 print("Waiting for QR")
+qr = qrtools.QR()
+qr.decode("horn.png")
+
+data = qr.decode(driver.get_qr())
+print(data)  # prints "Version 2"
+
 driver.wait_for_login()
 print("Bot started")
 

@@ -2,7 +2,7 @@ import os, sys
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-print "Environment", os.environ
+print "Environment Mac", os.environ
 try:  
    os.environ["SELENIUM"]
 except KeyError: 
